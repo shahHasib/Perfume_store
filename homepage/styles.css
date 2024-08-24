@@ -1,0 +1,113 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    margin: 10px;
+    padding: 10px;
+    background-color: rgb(0, 0, 0);
+}
+.navbar .webProfile{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.navbar .webProfile .webImage{
+    height: 80px;
+    margin: 5px;
+    padding: 2px;
+    border-radius: 50%;
+    border: 5px solid white;
+    
+}
+.navbar .webProfile .webName{
+    font-size: 30px;
+}
+.links a{
+    text-decoration: none;
+    font-size: 18px;
+    padding: 5px;
+    border-radius: 10px;
+    margin: 50px;
+    color: white;
+    filter: drop-shadow(1px 1px 0px cyan);
+    overflow: hidden;
+    box-shadow: 2px 2px 5px whitesmoke,
+    -2px -2px 5px black; 
+   
+}
+.adsSection{
+   display: flex;
+    margin: 20px;
+    box-shadow: 0px 0px 25px aqua,0px 0px 25px rgb(0, 26, 255);
+    overflow: hidden;
+}
+.adsSection img{
+    width: 300vh;
+    height: 500px;
+    aspect-ratio: 8/4;
+    margin: 10px;
+    transform: translateX(-100%);
+    
+    
+}
+.perfumes{
+    display: flex;
+    box-shadow: 0px 0px 25px aqua,0px 0px 25px rgb(0, 26, 255);
+   
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    
+    padding: 40px;
+}
+.perfumes .item{
+    max-width: 300px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0,0.2);
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0px 0px 25px aqua,0px 0px 25px rgb(0, 26, 255);
+   
+}
+
+.item img{
+  
+   width: 100%;
+   height: 50%;
+}
+.item .itemDetails{
+    font-weight: 400;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 10px;
+    height: 50%;
+    
+}
+.itemDetails p{
+    font-size: 1em;
+    padding: 0px 10px;
+    margin: 5px;
+}
+.itemDetails button{
+    padding: 10px 20px;
+    border: none;
+    background-color: rgb(22, 17, 17);
+    color: white;
+   
+    border-radius: 5px;
+}
+.itemDetails button:hover{
+    background-color: rgb(59, 57, 57);
+}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Online Perfume Store</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+    <div class="container">
+        <h2>Login</h2>
+        <form >
+            <label for="category">Select your category:</label>
+            <select id="category" name="category" required>
+                <option value="" disabled selected>Select category</option>
+                <option value="admin">Admin</option>
+                <option value="user">User</option>
+                <option value="guest">Guest</option>
+            </select>
+
+           <div class="inp">
+            <img src="../resources/user_logo.png" alt="" class="user">
+            <input type="text" id="username" name="username" required>
+          </div>
+
+          <div>
+            <img src="../resources/pass_icon.png" alt="" class="pass">
+            <input type="password" id="password" name="password" required>
+          </div>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+    <script src="login.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,107 @@
+/* General Reset and Styling */
+html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+* {
+    filter: drop-shadow(0px 0px 110px rgba(15, 120, 240, 0.616));
+    color: rgb(255, 255, 255);
+}
+
+/* Container Styling */
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    max-width: 300px;
+    border: 2px solid black;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 25px aqua, 0px 0px 25px rgb(0, 26, 255);
+}
+
+/* Form Styling */
+form {
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+form input, select, button {
+    width: 100%;
+    padding: 5px 30px;
+    border-radius: 5px;
+    margin: 5px 0px;
+    font-weight: 600;
+}
+
+/* Input Container Styling */
+form .inp {
+    position: relative;
+    width: 175px;
+}
+
+/* Image Styling */
+form div {
+    display: flex;
+}
+
+img {
+    height: 20px;
+    border: none;
+}
+
+form div .user {
+    position: absolute;
+    z-index: 1;
+    border: none;
+    border-radius: 50%;
+    padding: 1.4vh;
+}
+
+form div .phone {
+    position: absolute;
+    z-index: 1;
+    border: none;
+    border-radius: 50%;
+    padding: 1.4vh;
+}
+form div .email{
+    position: absolute;
+    z-index: 1;
+    border: none;
+    border-radius: 50%;
+    padding: 1.4vh;
+
+
+}
+form div .pass{
+    position: absolute;
+    z-index: 1;
+    border: none;
+    border-radius: 50%;
+    padding: 1.4vh;
+
+
+}
+/* Button Styling */
+form button {
+    background-color: rgba(11, 160, 230, 0.74);
+}
+
+form button:hover {
+    background-color: rgb(0, 0, 0);
+    color: white;
+}
