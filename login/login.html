@@ -14,22 +14,23 @@
         <form >
             <label for="category">Select your category:</label>
             <select id="category" name="category" required>
-                <option value="" disabled selected>Select category</option>
+                <option value="" disabled >Select category</option>
                 <option value="admin">Admin</option>
-                <option value="user">User</option>
-                <option value="guest">Guest</option>
+                <option value="user" selected>User</option>
             </select>
 
            <div class="inp">
             <img src="../resources/user_logo.png" alt="" class="user">
-            <input type="text" id="username" name="username" required>
+            <input type="text" id="username" name="username" placeholder="  Username" required>
           </div>
-
           <div>
             <img src="../resources/pass_icon.png" alt="" class="pass">
-            <input type="password" id="password" name="password" required>
+            <input type="password" id="password" name="password" placeholder="  Password">
           </div>
             <button type="submit">Login</button>
+            <div>
+               Don't have an account ?<a href="../register/register.html"><span>Sign Up</span></a>
+            </div>
         </form>
     </div>
     <script src="login.js"></script>

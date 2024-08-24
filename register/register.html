@@ -14,33 +14,34 @@
         <form id="registrationForm" action="register.php" method="post">
             <label for="category">Select your category:</label>
             <select id="category" name="category" required>
-                <option value="" disabled selected>Select category</option>
-                <option value="user">User</option>
+                <option value="" disabled >Select category</option>
+                <option value="user" selected>User</option>
                 <option value="guest">Guest</option>
             </select>
 
-            <div class="inp">
+            <div class="inp" id="user">
                 <img src="../resources/user_logo.png" alt="" class="user">
                 <input type="text" id="username" name="username" placeholder="Username" required>
             </div>
-            <div class="inp" id="emailContainer">
+            <div class="inp" id="em">
                 <img src="../resources/email_icon.png" alt="" class="email">
                 <input type="email" id="email" name="email" placeholder="Email Address">
             </div>
 
-            <div class="inp" id="phone" style="display: none;">
+            <div class="inp" id="ph">
                 <img src="../resources/phone_icon.png" alt="" class="phone">
                 <input type="text" id="phone" name="phone" placeholder="Phone Number">
             </div>
 
-            
-
-            <div>
+            <div class="inp" id="pass">
                 <img src="../resources/pass_icon.png" alt="" class="pass">
                 <input type="password" id="password" name="password" placeholder="Password" required>
             </div>
+
+            <div><button type="submit">Register</button></div>
+            <div>Already have an account ? <a href="../login/login.html">Login</a></div>
+
             
-            <button type="submit">Register</button>
         </form>
     </div>
     <script src="register.js"></script>
