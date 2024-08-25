@@ -1,39 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login - Online Perfume Store</title>
-    <link rel="stylesheet" href="login.css">
-</head>
+    <link rel="stylesheet" href="login.css" />
+  </head>
 
-<body>
+  <body>
     <div class="container">
-        <h2>Login</h2>
-        <form >
-            <label for="category">Select your category:</label>
-            <select id="category" name="category" required>
-                <option value="" disabled >Select category</option>
-                <option value="admin">Admin</option>
-                <option value="user" selected>User</option>
-            </select>
+      <h2>Login</h2>
+      <form action="login_process.php" method="post">
+        <label for="category">Select your category:</label>
+        <select id="category" name="category" required>
+          <option value="" disabled>Select category</option>
+          <option value="admin">Admin</option>
+          <option value="user" selected>User</option>
+        </select>
 
-           <div class="inp">
-            <img src="../resources/user_logo.png" alt="" class="user">
-            <input type="text" id="username" name="username" placeholder="  Username" required>
-          </div>
-          <div>
-            <img src="../resources/pass_icon.png" alt="" class="pass">
-            <input type="password" id="password" name="password" placeholder="  Password">
-          </div>
-            <button type="submit">Login</button>
-            <div>
-               Don't have an account ?<a href="../register/register.html"><span>Sign Up</span></a>
-            </div>
-        </form>
+        <div class="inp">
+          <img src="../resources/user_logo.png" alt="" class="user" />
+          <input
+            type="text"
+            id="username"
+            name="username"
+            placeholder="Username"
+            required
+          />
+        </div>
+        <div class="inp">
+          <img src="../resources/pass_icon.png" alt="" class="pass" />
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Password"
+          />
+        </div>
+        <button type="submit">Login</button>
+
+        <div>
+          Don't have an account ?<a href="../register/register.html"
+            ><span>Sign Up</span></a
+          >
+        </div>
+      </form>
     </div>
     <script src="login.js"></script>
-</body>
-
+  </body>
 </html>
