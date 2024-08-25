@@ -19,9 +19,9 @@ if ($stmt = $conn->prepare($sql)) {
 
     if ($result->num_rows > 0) {
         if ($category === "user") {
-            header("Location: ../homepage/home.html");
+            header("Location: ../homepage/home.php");
         } else {
-            header("Location: ../admin/admin.html");
+            header("Location: ../admin/admin.php");
         }
     } else {
         if ($category === "user") {
