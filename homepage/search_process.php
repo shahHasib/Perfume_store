@@ -1,33 +1,13 @@
-<?php
-include "../admin/config.php";
-
-// Check if the search term is provided
-if (isset($_GET['search']) && !empty($_GET['search'])) {
-    $search_term = "%" . $_GET['search'] . "%";
-    
-    // Prepare the SQL query to search in the products table
-    $sql = $conn->prepare("SELECT name, description, price, image_path FROM products WHERE name LIKE ? OR description LIKE ?");
-    $sql->bind_param("ss", $search_term, $search_term);
-    
-    $sql->execute();
-    $result = $sql->get_result();
-} else {
-    // If no search term is provided, redirect to the main page or show an error
-    header("Location: home.php");
-    exit;
-}
-
-$conn->close();
-?>
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Search Results</title>
+    <title>Perfume Store</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <header>
         <nav class="navbar">
@@ -35,22 +15,43 @@ $conn->close();
                 <img src="../resources/webLogo.png" alt="" class="webImage">
                 <h1 class="webName">Perfume Store</h1>
             </div>
-            <div class="searchArea">
-                <form method="GET" action="search_process.php">
-                    <input type="search" name="search" class="search" placeholder="Search" value="<?php echo isset($_GET['search']) ? $_GET['search'] : ''; ?>" required />
-                    <button type="submit" class="searchButton">
-                        <img src="../resources/search.png" alt="" class="searchImg">
+                <form method="GET" action="search_process.php" class="searchArea">
+                    <input type="search" name="search" class="search" placeholder="Search" value="<?php echo isset($_GET['search']) ? $_GET['search'] : ''; ?>" />
+                    <button type="submit" class="searchButton" >
+                        <img src="../resources/search.png" class="searchImg"/>
                     </button>
                 </form>
-            </div>
+           
             <div class="links">
                 <a href="../login/login.html" class="link">Login</a>
             </div>
         </nav>
     </header>
 
+    <div class="adsSection">
+        <img src="../resources/per_1.png" alt="" class="ad">
+        <img src="../resources/per_1.png" alt="" class="ad">
+        <img src="../resources/per_1.png" alt="" class="ad">
+        <img src="../resources/per_1.png" alt="" class="ad">
+    </div>
+
     <div class='perfumes'>
         <?php
+        include "../admin/config.php";
+
+        // Check if search term is set
+        if (isset($_GET['search']) && !empty($_GET['search'])) {
+            $search_term = "%" . $_GET['search'] . "%";
+            $sql = $conn->prepare("SELECT name, description, price, image_path FROM products WHERE name LIKE ? OR description LIKE ?");
+            $sql->bind_param("ss", $search_term, $search_term);
+        } else {
+            // Default query to show all products
+            $sql = $conn->prepare("SELECT name, description, price, image_path FROM products");
+        }
+
+        $sql->execute();
+        $result = $sql->get_result();
+
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
                 echo "
@@ -67,8 +68,11 @@ $conn->close();
                 </div>";
             }
         } else {
-            echo "<p>No items found matching your search.</p>";
+            echo "<p>No items found.</p>";
         }
+
+        $sql->close();
+        $conn->close();
         ?>
     </div>
 
@@ -80,5 +84,8 @@ $conn->close();
             <a href="" class="link">Contact Us</a>
         </div>
     </footer>
+
+    <script src="script.js"></script>
 </body>
+
 </html>

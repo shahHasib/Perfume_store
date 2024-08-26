@@ -51,14 +51,17 @@ body,html{
     width: 55vw;
     font-size: 18pt;
 }
-.navbar .searchArea .searchImg{
-    width: 3.1vw;
+.navbar .searchArea .searchImg,button{
+    width: 4vw;
     height: 6.2vh;
     border-radius: 0 10px 10px 0;
     outline: none;
-    border: none;
-   
-   
+    border: none; 
+    background-color: #fff;
+    overflow: hidden;   
+}
+.navbar .searchArea button:hover{
+transform: scale(1.5);
 }
 .links a{
     width: 20vh;

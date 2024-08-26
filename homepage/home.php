@@ -15,15 +15,13 @@
                 <img src="../resources/webLogo.png" alt="" class="webImage">
                 <h1 class="webName">Perfume Store</h1>
             </div>
-            <div class="searchArea">
-                <!-- Search form submits to the same page -->
-                <form method="GET" action="search_process.php">
+                <form method="GET" action="search_process.php" class="searchArea">
                     <input type="search" name="search" class="search" placeholder="Search" value="<?php echo isset($_GET['search']) ? $_GET['search'] : ''; ?>" />
-                    <button type="submit" class="searchButton">
-                        <img src="../resources/search.png" alt="" class="searchImg">
+                    <button type="submit" class="searchButton" >
+                        <img src="../resources/search.png" class="searchImg"/>
                     </button>
                 </form>
-            </div>
+           
             <div class="links">
                 <a href="../login/login.html" class="link">Login</a>
             </div>
