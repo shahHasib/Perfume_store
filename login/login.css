@@ -10,7 +10,7 @@ html,body{
     justify-content: center;
     align-items: center;
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    filter:drop-shadow( 0px 0px 110px rgba(15, 120, 240, 0.616));
+    filter:drop-shadow( 0px 0px 90px rgba(15, 120, 240, 0.616));
    
 }
 
@@ -25,7 +25,7 @@ html,body{
     padding: 40px;
     border-radius: 10px;
     box-shadow: 0px 0px 25px aqua,0px 0px 25px rgb(0, 26, 255);
-    filter:drop-shadow( 0px 0px 110px rgba(15, 120, 240, 0.616));
+    filter:drop-shadow( 0px 0px 80px rgba(15, 120, 240, 0.616));
 }
 
 form{
@@ -33,7 +33,7 @@ form{
     display:flex;
     flex-direction: column;
     justify-content: center;
-    filter:drop-shadow( 0px 0px 110px rgba(15, 120, 240, 0.616));
+    filter:drop-shadow( 0px 0px 70px rgba(15, 120, 240, 0.616));
 }
 
 form input,select,button,option{
@@ -44,7 +44,7 @@ form input,select,button,option{
     font-weight: 600;
     color: black;
     line-height: 1.5; 
-    filter:drop-shadow( 0px 0px 110px rgba(15, 120, 240, 0.616));
+    filter:drop-shadow( 0px 0px 60px rgba(15, 120, 240, 0.616));
 }
 form a{
     

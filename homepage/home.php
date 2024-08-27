@@ -15,8 +15,8 @@
                 <img src="../resources/webLogo.png" alt="" class="webImage">
                 <h1 class="webName">Perfume Store</h1>
             </div>
-                <form method="GET" action="search_process.php" class="searchArea">
-                    <input type="search" name="search" class="search" placeholder="Search" value="<?php echo isset($_GET['search']) ? $_GET['search'] : ''; ?>" />
+                <form method="GET" action="" class="searchArea">
+                    <input type="search" name="search" class="search" placeholder="Search Products" value="<?php echo isset($_GET['search']) ? $_GET['search'] : ''; ?>" />
                     <button type="submit" class="searchButton" >
                         <img src="../resources/search.png" class="searchImg"/>
                     </button>
@@ -27,29 +27,26 @@
             </div>
         </nav>
     </header>
-
+<!-- 
     <div class="adsSection">
         <img src="../resources/per_1.png" alt="" class="ad">
         <img src="../resources/per_1.png" alt="" class="ad">
         <img src="../resources/per_1.png" alt="" class="ad">
         <img src="../resources/per_1.png" alt="" class="ad">
-    </div>
+    </div> -->
 
     <div class='perfumes'>
-        <?php
-        include "../admin/config.php";
-
-        // Check if search term is set
-        if (isset($_GET['search']) && !empty($_GET['search'])) {
-            $search_term = "%" . $_GET['search'] . "%";
-            $sql = $conn->prepare("SELECT name, description, price, image_path FROM products WHERE name LIKE ? OR description LIKE ?");
-            $sql->bind_param("ss", $search_term, $search_term);
-        } else {
-            // Default query to show all products
-            $sql = $conn->prepare("SELECT name, description, price, image_path FROM products");
-        }
-
-        $sql->execute();
+    <?php
+include "../admin/config.php";
+if (isset($_GET['search']) && !empty($_GET['search'])) {
+     $search_term = "%" . $_GET['search'] . "%";
+     $sql = $conn->prepare("SELECT name, description, price, image_path FROM products WHERE name LIKE ? OR description LIKE ?");
+    $sql->bind_param("ss", $search_term, $search_term);
+} else {
+        
+      $sql = $conn->prepare("SELECT name, description, price, image_path FROM products");
+}
+$sql->execute();
         $result = $sql->get_result();
 
         if ($result->num_rows > 0) {
@@ -71,9 +68,10 @@
             echo "<p>No items found.</p>";
         }
 
-        $sql->close();
-        $conn->close();
-        ?>
+$sql->close();
+$conn->close();
+?>
+
     </div>
 
     <footer>
